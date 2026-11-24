@@ -1,167 +1,175 @@
+# Practical 03: Student Registration Form (HTML5 Forms and Semantic Elements)
 
-SiT Registration.html
-100%
+**Name:** Manthan Dhale  
+**Course:** Tinker Lab (2026–27)  
+**Institute:** Symbiosis Institute of Technology, Nagpur  
+
+---
+
+## 1. Aim
+To design and develop a structured, accessible student registration form using HTML5 form controls, built-in client-side validation attributes, and semantic HTML5 layout elements.
+
+---
+
+## 2. Theory
+
+### 2.1 HTML5 Semantic Elements for Structure & Forms
+Semantic HTML5 tags clearly describe the role of each section to both browsers and assistive technologies (such as screen readers):
+- `<header>`, `<main>`, and `<footer>`: Define the top banner, primary form content area, and bottom page footer.
+- `<fieldset>` and `<legend>`: Group related form inputs together into logical blocks (e.g., *Personal Information*, *Academic Details*) with a descriptive caption.
+- `<label for="...">`: Associates a text label with a specific form control via matching `id` attributes, allowing users to click the label to focus or toggle the input.
+
+### 2.2 HTML5 Form Controls & Input Types
+The `<form>` container collects user input and prepares it for submission using `action` and `method` attributes:
+- **Specialized `<input>` Types:** `text`, `email`, `tel`, `date`, `number`, `radio` (mutually exclusive choices), and `checkbox` (multiple selections).
+- **`<select>` and `<option>`:** Creates a compact dropdown menu for selecting from predefined categories such as engineering branches or academic years.
+- **`<textarea>`:** Provides a multi-line text box for longer entries like residential addresses.
+- **`<button type="submit">` and `<button type="reset">`:** Submits validated form data or clears all fields back to their default state.
+
+### 2.3 Built-in HTML5 Client-Side Validation
+HTML5 performs native input validation in the browser without requiring JavaScript:
+- `required`: Prevents form submission if a mandatory field is left blank.
+- `type="email"` and `type="tel"`: Verifies proper email formatting (`@` and domain) and numeric phone formats.
+- `pattern`: Enforces a regular expression rule (e.g., `pattern="[0-9]{10}"` for a 10-digit mobile number).
+- `placeholder`: Displays helpful hint text inside empty fields.
+
+---
+
+## 3. Steps for Implementation
+1. Create a folder named `Practical-03-Student-Registration-Form` and create a new file named `registration.html`.
+2. Set up the HTML5 boilerplate (`<!DOCTYPE html>`, `<html>`, `<head>`, `<title>`, `<body>`) with semantic `<header>`, `<main>`, and `<footer>` elements.
+3. Add a `<form>` element and organize inputs into three semantic groups using `<fieldset>` and `<legend>`: **Personal Details**, **Academic Details**, and **Interests & Address**.
+4. Pair every `<input>`, `<select>`, and `<textarea>` with an explicit `<label for="...">` attribute.
+5. Apply HTML5 validation attributes (`required`, `pattern`, `min`, `max`, `placeholder`) along with Submit and Reset buttons.
+6. Open `registration.html` in a web browser, test both empty/invalid submissions and valid entries, and capture a screenshot (`output.png`).
+
+---
+
+## 4. Files in This Folder
+- [`registration.html`](./registration.html) — Complete HTML5 source code for the student registration form.
+- [`output.png`](./output.png) — Browser output screenshot *(upload your screenshot with this filename)*.
+
+---
+
+## 5. Source Code (`registration.html`)
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SYMBIOSIS EVENTS REGISTRATION Form</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #f4f7f6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            color: #333333;
-        }
-
-        main {
-            background-color: #ffffff;
-            padding: 30px 40px;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-            width: 100%;
-            max-width: 450px;
-            border-top: 6px solid #a8e6cf;
-        }
-
-        header h1 {
-            font-size: 1.4rem;
-            color: #4a6fa5;
-            text-align: center;
-            margin-bottom: 24px;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        .form-group {
-            margin-bottom: 18px;
-        }
-
-        label {
-            display: block;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 6px;
-            color: #555555;
-        }
-
-        input[type="text"],
-        input[type="tel"],
-        select {
-            width: 100%;
-            padding: 10px 14px;
-            border: 1px solid #dcdde1;
-            border-radius: 6px;
-            font-size: 0.95rem;
-            background-color: #fafafa;
-            transition: border-color 0.2s ease;
-        }
-
-        input[type="text"]:focus,
-        input[type="tel"]:focus,
-        select:focus {
-            outline: none;
-            border-color: #a8e6cf;
-            background-color: #ffffff;
-        }
-
-        .radio-group {
-            display: flex;
-            gap: 12px;
-            margin-top: 6px;
-        }
-
-        .radio-option {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            font-size: 0.9rem;
-            cursor: pointer;
-        }
-
-        input[type="radio"] {
-            accent-color: #4a6fa5;
-            cursor: pointer;
-        }
-
-        button {
-            width: 100%;
-            padding: 12px;
-            background-color: #4a6fa5;
-            color: #ffffff;
-            border: none;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 10px;
-            transition: background-color 0.2s ease;
-        }
-
-        button:hover {
-            background-color: #3b5984;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practical 03 - Student Registration Form</title>
 </head>
 <body>
 
-    <main>
-        <header>
-            <h1>Symbiosis Events Registration</h1>
-        </header>
+  <header>
+    <h1>Student Registration Portal</h1>
+    <p>Fill out the form below to register for Tinker Lab &amp; Technical Clubs (2026–27).</p>
+  </header>
 
-        <form action="#" method="POST">
-            <div class="form-group">
-                <label for="fullname">Full Name</label>
-                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
-            </div>
+  <main>
+    <form action="#" method="post">
 
-            <div class="form-group">
-                <label for="prn">PRN</label>
-                <input type="text" id="prn" name="prn" placeholder="Enter your PRN" required>
-            </div>
+      <fieldset>
+        <legend>1. Personal Details</legend>
 
-            <div class="form-group">
-                <label>Section</label>
-                <div class="radio-group">
-                    <label class="radio-option"><input type="radio" name="section" value="A" required> A</label>
-                    <label class="radio-option"><input type="radio" name="section" value="B"> B</label>
-                    <label class="radio-option"><input type="radio" name="section" value="C"> C</label>
-                    <label class="radio-option"><input type="radio" name="section" value="D"> D</label>
-                    <label class="radio-option"><input type="radio" name="section" value="E"> E</label>
-                </div>
-            </div>
+        <p>
+          <label for="fullname">Full Name: *</label><br>
+          <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+        </p>
 
-            <div class="form-group">
-                <label for="mobile">Mobile Number</label>
-                <input type="tel" id="mobile" name="mobile" placeholder="Enter 10-digit mobile number" pattern="[0-9]{10}" required>
-            </div>
+        <p>
+          <label for="email">Email Address: *</label><br>
+          <input type="email" id="email" name="email" placeholder="student@example.edu" required>
+        </p>
 
-            <div class="form-group">
-                <label for="event">Select Event</label>
-                <select id="event" name="event" required>
-                    <option value="" disabled selected>-- Select an Event --</option>
-                    <option value="html-programming">HTML Programming</option>
-                    <option value="iot-programming">IoT Programming</option>
-                    <option value="workshop">Workshop</option>
-                    <option value="seminars">Seminars</option>
-                </select>
-            </div>
+        <p>
+          <label for="phone">Mobile Number (10 digits): *</label><br>
+          <input type="tel" id="phone" name="phone" placeholder="9876543210" pattern="[0-9]{10}" required>
+        </p>
 
-            <button type="submit">Register Now</button>
-        </form>
-    </main>
+        <p>
+          <label for="dob">Date of Birth: *</label><br>
+          <input type="date" id="dob" name="dob" required>
+        </p>
+
+        <p>
+          Gender:<br>
+          <input type="radio" id="male" name="gender" value="Male" required>
+          <label for="male">Male</label>
+
+          <input type="radio" id="female" name="gender" value="Female">
+          <label for="female">Female</label>
+
+          <input type="radio" id="other" name="gender" value="Other">
+          <label for="other">Other</label>
+        </p>
+      </fieldset>
+
+      <br>
+
+      <fieldset>
+        <legend>2. Academic Information</legend>
+
+        <p>
+          <label for="prn">PRN / Roll Number: *</label><br>
+          <input type="text" id="prn" name="prn" placeholder="e.g., 26070122001" required>
+        </p>
+
+        <p>
+          <label for="branch">Department / Branch: *</label><br>
+          <select id="branch" name="branch" required>
+            <option value="">-- Select Branch --</option>
+            <option value="CSE">Computer Science &amp; Engineering (CSE)</option>
+            <option value="AI-ML">Artificial Intelligence &amp; Machine Learning</option>
+            <option value="ECE">Electronics &amp; Telecommunication</option>
+            <option value="MECH">Mechanical Engineering</option>
+          </select>
+        </p>
+
+        <p>
+          <label for="year">Year of Study: *</label><br>
+          <input type="number" id="year" name="year" min="1" max="4" value="1" required>
+        </p>
+      </fieldset>
+
+      <br>
+
+      <fieldset>
+        <legend>3. Technical Interests &amp; Address</legend>
+
+        <p>
+          Areas of Interest:<br>
+          <input type="checkbox" id="web" name="interests" value="Web Development">
+          <label for="web">Web Development (HTML/CSS)</label><br>
+
+          <input type="checkbox" id="arduino" name="interests" value="Arduino & IoT">
+          <label for="arduino">Arduino &amp; Embedded Systems</label><br>
+
+          <input type="checkbox" id="excel" name="interests" value="Data Analytics">
+          <label for="excel">Data Analytics &amp; Excel</label>
+        </p>
+
+        <p>
+          <label for="address">Residential Address:</label><br>
+          <textarea id="address" name="address" rows="4" cols="40" placeholder="Enter your city, state, and pin code..."></textarea>
+        </p>
+      </fieldset>
+
+      <br>
+
+      <button type="submit">Register Student</button>
+      <button type="reset">Clear Form</button>
+
+    </form>
+  </main>
+
+  <hr>
+
+  <footer>
+    <p>&copy; 2026 Tinker Lab | Department of Computer Science &amp; Engineering</p>
+  </footer>
 
 </body>
 </html>
-Displaying SiT Registration.html.
