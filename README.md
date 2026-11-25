@@ -1,41 +1,46 @@
-# Tinker Lab (2026–27) — Practicals & Value-Added Experiments
+# Manthan Vijay Dhale — Personal Portfolio
 
-**Name:** Manthan Dhale  
-**Program:** B.Tech in Computer Science and Engineering (1st Year)  
-**Institute:** Symbiosis Institute of Technology, Nagpur  
+A responsive, multi-page portfolio starter built with plain HTML, CSS and JavaScript. No framework or build step is required.
 
----
+## Pages included
 
-## Repository Overview
-This repository contains all **10 Lab Practicals** and **4 Value-Added Experiments** completed for **Tinker Lab (2026–27)**, spanning:
-- **Web Development (HTML5 & CSS3):** Practicals 1–4 & Value-Added Experiment 1
-- **Office Productivity & Data Analytics (MS Word & Excel):** Practicals 5–6 & Value-Added Experiment 2
-- **Embedded Systems & IoT Prototyping (Arduino Uno & Tinkercad):** Practicals 7–10 & Value-Added Experiments 3–4
+- `index.html` — Home page with introduction, featured-work cards and calls to action.
+- `about.html` — About section, editable skills and journey timeline, plus a profile-photo uploader.
+- `certificates.html` — Certificate gallery with image/PDF upload, preview, open and remove actions.
+- `contact.html` — Contact form with browser validation and an email-app handoff.
 
----
+## Run the website
 
-## Part A: Lab Practicals (01 – 10)
+1. Extract the project folder.
+2. Open `index.html` in a modern browser, or open the folder in Visual Studio Code and use the Live Server extension.
+3. Use the top navigation to move between pages.
 
-| S. No | Experiment Name | Tools / Components | Folder |
-| :---: | :--- | :--- | :--- |
-| **01** | Introduction to HTML (Text Formatting, Lists, and Tables) | HTML5 | [Open](./Practicals/Practical-01-HTML-Basics) |
-| **02** | Educational Website (Hyperlinks, Images, and Navigation Elements) | HTML5 | [Open](./Practicals/Practical-02-Educational-Website) |
-| **03** | Student Registration Form (HTML5 Forms and Semantic Elements) | HTML5 | [Open](./Practicals/Practical-03-Student-Registration-Form) |
-| **04** | Responsive Webpage using CSS (Inline/Internal/External CSS, Flexbox, Media Queries) | HTML5, CSS3 | [Open](./Practicals/Practical-04-Responsive-CSS-Webpage) |
-| **05** | Professional Document Formatting (Styles, Tables, Images, Headers/Footers, References) | Microsoft Word | [Open](./Practicals/Practical-05-MS-Word-Document-Formatting) |
-| **06** | Data Analysis and Reporting (Formulas, Functions, Charts, Sorting, Filtering, Pivot Tables) | Microsoft Excel | [Open](./Practicals/Practical-06-MS-Excel-Data-Analysis) |
-| **07** | Arduino Uno Architecture, IDE, Digital/Analog I/O, LED & Push-Button Interfacing | Arduino Uno, LED, Push-Button | [Open](./Practicals/Practical-07-Arduino-Architecture-Digital-IO) |
-| **08** | Interfacing Sensors & Actuators (Temp Sensor, Potentiometer, LCD, DC & Servo Motors) | Arduino Uno, Sensors, Motors, LCD | [Open](./Practicals/Practical-08-Arduino-Sensors-Actuators) |
-| **09** | Smart Street Light System (Testing and Troubleshooting) | Arduino Uno, LDR, LED | [Open](./Practicals/Practical-09-Smart-Street-Light) |
-| **10** | Automatic Plant Irrigation System (Debugging and Performance Evaluation) | Arduino Uno, Soil Moisture Sensor, Relay | [Open](./Practicals/Practical-10-Automatic-Plant-Irrigation) |
+## Personalise the content
 
----
+- Search for `Manthan Vijay Dhale` in the HTML files if you need to change the display name.
+- Replace the introduction and sample project cards in `index.html` with your own details.
+- Edit your biography, education/journey timeline and skill tags in `about.html`.
+- On the About page, select **Upload your photo** to preview and save your portrait in this browser. You can also replace `assets/images/avatar-placeholder.svg` with your own image file and update the image path in `about.html`.
+- On the Certificates page, select **Add certificates** to add JPG, PNG, WebP or PDF files. You can preview/open and remove them.
+- Replace the sample Instagram, LinkedIn and GitHub links in `contact.html` with your profile URLs.
 
-## Part B: Value-Added Experiments (01 – 04)
+## Make the contact form send to you
 
-| S. No | Experiment Name | Tools / Components | Folder |
-| :---: | :--- | :--- | :--- |
-| **01** | Responsive Personal Portfolio Website (Navigation, Image Galleries, Forms, Responsive Layouts) | HTML5, CSS3 | [Open](./Value-Added-Experiments/VAE-01-Responsive-Portfolio-Website) |
-| **02** | Student Performance Analytics Dashboard (Formulas, Charts, Conditional Formatting, Data Validation) | Microsoft Excel | [Open](./Value-Added-Experiments/VAE-02-Student-Performance-Excel-Dashboard) |
-| **03** | Smart Temperature Monitoring and Alert System (Threshold Alerts on LCD & Buzzer) | Arduino Uno, TMP36, 16×2 LCD, Buzzer | [Open](./Value-Added-Experiments/VAE-03-Smart-Temperature-Monitoring-Alert) |
-| **04** | Smart Street Light System using Arduino and LDR (Sensor Calibration Troubleshooting) | Arduino Uno, LDR, LED | [Open](./Value-Added-Experiments/VAE-04-Smart-Street-Light-LDR-Calibration) |
+Open `assets/js/main.js` and replace:
+
+```js
+const CONTACT_EMAIL = 'YOUR_EMAIL@example.com';
+```
+
+with your real email address. The form validates the fields and opens the visitor's default email app with a pre-filled message. This is a front-end-only solution; it does not send or store messages on a server. For a hosted form that submits without opening an email app, connect a form service or backend.
+
+## Important note about uploads
+
+The photo and certificate upload tools save files in the visitor's browser using IndexedDB. That is useful for trying out the page and managing your own gallery on your device, but uploads are **not automatically published to the internet** and are not shared with other visitors. To show certificate files to everyone on your hosted site, place the files inside the website folder (for example, `assets/images/certificates/`) and add their image paths to the gallery HTML, or connect a server-side upload/storage service.
+
+## Design and accessibility
+
+- Responsive layout for desktop, tablet and mobile.
+- Collapsible mobile navigation with an active-page indicator.
+- Semantic page landmarks, form labels, keyboard-focus states and reduced-motion support.
+- Google Fonts are loaded online; system fallbacks are provided by CSS.
