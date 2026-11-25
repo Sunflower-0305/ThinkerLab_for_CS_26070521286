@@ -18,7 +18,7 @@ This repository contains all **10 Lab Practicals** and **4 Value-Added Experimen
 
 | S. No | Experiment Name | Tools / Components | Folder |
 | :---: | :--- | :--- | :--- |
-| **01** | Introduction to HTML (Text Formatting, Lists, and Tables) | HTML5 | [Open]([ Practical 1 ]) |
+| **01** | Introduction to HTML (Text Formatting, Lists, and Tables) | HTML5 | [Open](./Practicals/Practical-01-HTML-Basics) |
 | **02** | Educational Website (Hyperlinks, Images, and Navigation Elements) | HTML5 | [Open](./Practicals/Practical-02-Educational-Website) |
 | **03** | Student Registration Form (HTML5 Forms and Semantic Elements) | HTML5 | [Open](./Practicals/Practical-03-Student-Registration-Form) |
 | **04** | Responsive Webpage using CSS (Inline/Internal/External CSS, Flexbox, Media Queries) | HTML5, CSS3 | [Open](./Practicals/Practical-04-Responsive-CSS-Webpage) |
